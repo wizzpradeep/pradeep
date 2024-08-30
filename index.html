@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <div class="main w-full fixed z-50">
+      <!-- started nav bar here  -->
+      <!-- ============================================================================================================ -->
+      <div class="header bg-gray-900 w-full flex justify-between items-center">
+        <div class="header_left lg:w-80">
+          <div class="logo">
+            <img
+              src="./assets/mylogo.png"
+              alt="pradeep logo"
+              class="max-h-20 mix-blend-screen"
+            />
+          </div>
+        </div>
+        <!-- started small nav bar here  -->
+        <!-- ============================================================================================================ -->
+        <div class="small_hader_right lg:hidden md:hidden xl:hidden">
+          <i
+            id="open_small_nav"
+            class="fa-solid fa-bars text-white text-3xl mr-2"
+          ></i>
+          <!--  -->
+          <div
+            id="small_nav"
+            class="w-full h-screen fixed bg-gray-900 z-10 top-0 right-0 flex flex-col"
+          >
+            <div class="flex items-center justify-between px-3">
+              <img
+                src="./assets/mylogo.png"
+                alt="pradeep logo"
+                class="max-h-20 mix-blend-screen"
+              />
+              <i
+                id="close_small_nav"
+                class="fa-solid fa-xmark text-white text-3xl"
+              ></i>
+            </div>
+            <div class="flex flex-col gap-20">
+              <ul class="flex flex-col gap-10 mt-10">
+                <li class="w-80 mx-auto flex">
+                  <a
+                    href="#"
+                    class="text-white hover:font-bold flex-1 text-center rounded-full border p-2 hover:text-gray-500 text-lg bg-gray-800"
+                    >Home</a
+                  >
+                </li>
+                <li class="w-80 mx-auto flex">
+                  <a
+                    href="#"
+                    class="text-white hover:font-bold flex-1 text-center rounded-full border p-2 hover:text-gray-500 text-lg bg-gray-800"
+                    >Projects</a
+                  >
+                </li>
+                <li class="w-80 mx-auto flex">
+                  <a
+                    href="#"
+                    class="text-white hover:font-bold flex-1 text-center rounded-full border p-2 hover:text-gray-500 text-lg bg-gray-800"
+                    >Contact</a
+                  >
+                </li>
+                <li class="w-80 mx-auto flex">
+                  <a
+                    href="#"
+                    class="text-white hover:font-bold flex-1 text-center rounded-full border p-2 hover:text-gray-500 text-lg bg-gray-800"
+                    >Resume</a
+                  >
+                </li>
+              </ul>
+              <div
+                class="flex justify-center items-center border gap-1 rounded-full relative"
+              >
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  placeholder="Search"
+                  class="outline-none rounded-full text-white p-2 bg-transparent placeholder:text-white text-center font-bold pr-10 w-52"
+                />
+                <i
+                  class="fa-solid fa-magnifying-glass text-white absolute right-2 cursor-pointer"
+                ></i>
+              </div>
+            </div>
+            <!--  -->
+          </div>
+        </div>
+        <!--  small nav bar ended here  -->
+        <!-- ============================================================================================================ -->
+        <div
+          class="header_right lg:flex md:flex justify-between items-center flex-1 lg:flex-row flex-col hidden"
+        >
+          <ul
+            class="flex items-center justify-center lg:gap-20 lg:flex-row flex-col flex-grow"
+          >
+            <li class="">
+              <a href="#" class="text-white hover:font-bold hover:text-gray-500"
+                >Home</a
+              >
+            </li>
+            <li class="">
+              <a href="#" class="text-white hover:font-bold hover:text-gray-500"
+                >Projects</a
+              >
+            </li>
+            <li class="">
+              <a href="#" class="text-white hover:font-bold hover:text-gray-500"
+                >Contact</a
+              >
+            </li>
+            <li class="">
+              <a href="#" class="text-white hover:font-bold hover:text-gray-500"
+                >Resume</a
+              >
+            </li>
+          </ul>
+          <div
+            class="tools flex items-center justify-center flex-grow justify-end p-5"
+          >
+            <div
+              class="flex justify-center items-center border gap-1 rounded-full relative"
+            >
+              <input
+                type="text"
+                name=""
+                id=""
+                placeholder="Search"
+                class="outline-none rounded-full text-white p-2 bg-transparent placeholder:text-white text-center font-bold pr-10"
+              />
+              <i
+                class="fa-solid fa-magnifying-glass text-white absolute right-2 cursor-pointer"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- nav bar ended here  -->
+      <!-- ============================================================================================================ -->
+    </div>
+    <!--  -->
+    <!-- Home -->
+    <div
+      id="home"
+      class="w-full bg-gray-300 h-screen absolut flex lg:items-center"
+    >
+      <div class="relative top-20 w-full">
+        <hr />
+        <div
+          class="flex lg:gap-10 gap-20 p-1 items-center lg:w-5/6 mx-auto flex-col-reverse lg:flex-row"
+        >
+          <div class="flex flex-col lg:gap-10 gap-5 lg:w-1/2 w-full">
+            <p
+              class="text-center lg:text-start lg:text-5xl text-2xl font-bold uppercase text-gray-900"
+            >
+              Hi I am <span class="text-blue-500"> Pradeep,</span>
+            </p>
+            <p
+              class="text-center lg:text-start lg:text-5xl text-2xl font-bold uppercase text-sky-900"
+            >
+              Full Stack Developer
+            </p>
+            <p
+              class="text-center lg:text-start lg:text-2xl text-xl font-bold uppercase text-black"
+            >
+              Experties in
+              <span class="text-red-400 font-extrabold lg:text-4xl text-2xl"
+                >Python Django</span
+              >
+            </p>
+          </div>
+          <div class="lg:w-1/2 flex items-center justify-center">
+            <img
+              src="./assets/pradeep.jpg"
+              alt=""
+              class="my-img aspect-auto rounded-full border"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <h1>Site in developmnt process</h1>
+
+    <!--  -->
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const open_small_nav = document.getElementById("open_small_nav");
+      const small_nav = document.getElementById("small_nav");
+      const close_small_nav = document.getElementById("close_small_nav");
+
+      small_nav.style.display = "none";
+
+      open_small_nav.addEventListener("click", () => {
+        small_nav.style.display = "block";
+      });
+
+      close_small_nav.addEventListener("click", () => {
+        small_nav.style.display = "none";
+      });
+    });
+  </script>
+</html>
