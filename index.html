@@ -69,14 +69,14 @@
                 </li>
                 <li class="w-80 mx-auto flex">
                   <a
-                    href="#"
+                    href="#contact"
                     class="text-white hover:font-bold flex-1 text-center rounded-full border p-2 hover:text-gray-500 text-lg bg-gray-800"
                     >Contact</a
                   >
                 </li>
                 <li class="w-80 mx-auto flex">
                   <a
-                    href="#"
+                    href="https://drive.google.com/file/d/1-9sgk9P-isdUUrrdypw-pIsd3iQl8dM9/view?usp=drive_link"
                     class="text-white hover:font-bold flex-1 text-center rounded-full border p-2 hover:text-gray-500 text-lg bg-gray-800"
                     >Resume</a
                   >
@@ -121,12 +121,18 @@
               >
             </li>
             <li class="">
-              <a href="#" class="text-white hover:font-bold hover:text-gray-500"
+              <a
+                href="#contact"
+                class="text-white hover:font-bold hover:text-gray-500"
                 >Contact</a
               >
             </li>
-            <li class="">
-              <a href="#" class="text-white hover:font-bold hover:text-gray-500"
+            <li
+              class="border px-3 py-1 rounded-full hover:bg-sky-500 hover:border-sky-500"
+            >
+              <a
+                href="https://drive.google.com/file/d/1-9sgk9P-isdUUrrdypw-pIsd3iQl8dM9/view?usp=drive_link"
+                class="text-white hover:font-bold hover:text-black"
                 >Resume</a
               >
             </li>
@@ -193,6 +199,148 @@
         </div>
       </div>
     </div>
+
+    <!--  =========================================================-->
+    <!-- contact -->
+    <!--  -->
+    <div id="contact" class="bg-gray-800 h-screen w-full">
+      <div class="container mx-auto relative top-28">
+        <!-- main -->
+        <div
+          class="max-w-md mx-auto my-10 bg-gray-800 p-5 rounded-md shadow-sm lg:bg-gray-700"
+        >
+          <div class="text-center">
+            <h1 class="my-3 text-3xl font-semibold text-white">Contact Me</h1>
+            <p class="text-indigo-100 text-sm font-bold">
+              Fill up the form below to send me a message.
+            </p>
+          </div>
+          <div class="m-7">
+            <form
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              id="form"
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="f5a0f97f-b265-4e7e-892d-47f57b2875c7"
+              />
+              <input
+                type="hidden"
+                name="subject"
+                value="New Submission from your Website"
+              />
+              <input type="hidden" name="redirect" value="web3/thankyou.html" />
+              <input type="checkbox" name="botcheck" style="display: none" />
+
+              <div class="mb-6">
+                <label
+                  for="name"
+                  class="text-sm text-gray-200 font-bold capitalize"
+                  >Full Name</label
+                >
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="John Doe"
+                  required
+                  class="w-full px-3 py-2 rounded-md bg-gray-200 text-blak font-bold outline-none"
+                />
+              </div>
+              <div class="mb-6">
+                <label for="phone" class="text-sm text-gray-200 font-bold"
+                  >Phone Number</label
+                >
+                <input
+                  type="text"
+                  name="phone"
+                  id="phone"
+                  placeholder="+977 9800000000"
+                  required
+                  class="w-full px-3 py-2 rounded-md bg-gray-200 text-blak font-bold outline-none"
+                />
+              </div>
+              <div class="mb-6">
+                <label for="message" class="text-sm text-gray-200 font-bold"
+                  >Your Message
+                </label>
+
+                <textarea
+                  rows="5"
+                  name="message"
+                  id="message"
+                  placeholder="Your Message (You can send your email here)"
+                  class="w-full px-3 py-2 rounded-md bg-gray-200 text-blak font-bold outline-none"
+                  required
+                ></textarea>
+              </div>
+              <div class="mb-6">
+                <button
+                  type="submit"
+                  class="w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none"
+                >
+                  Send Message
+                </button>
+              </div>
+              <p class="text-base text-center text-gray-500" id="result"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const form = document.getElementById("form");
+      const result = document.getElementById("result");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        result.innerHTML = "Please wait...";
+
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: json,
+        })
+          .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+              result.innerHTML = json.message;
+              result.classList.remove("text-gray-500");
+              result.classList.add("text-green-500");
+            } else {
+              result.innerHTML = json.message;
+              result.classList.remove("text-gray-500");
+              result.classList.add("text-red-500");
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+            result.innerHTML = "Something went wrong!";
+          })
+          .then(function () {
+            form.reset();
+            setTimeout(() => {
+              result.style.display = "none";
+            }, 3000);
+          });
+      });
+    </script>
+    <!--  -->
+    <!-- ============================================ -->
+
+    <!-- ============================================ -->
+
     <div class="bg-black w-full text-center font-extrabold text-white">
       <p>🔧 Site in development process. Stay tuned for updates! 🔧</p>
     </div>
